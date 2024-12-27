@@ -1,0 +1,10 @@
+
+/* Couleurs a utiliser */
+:root {
+    --couleur-primaire: #f7c473;
+    --couleur-secondaire: #1a1a1a;
+    --couleur-texte: #f0f0f0;
+    --couleur-survol: #ffd27d;
+    --couleur-fond: #0f0f0f;
+}
+
