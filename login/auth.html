@@ -3,145 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latton Forum - Accueil</title>
+    <title>Latton Forum - Connexion</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo-container">
+    <div class="login-container">
+        <div class="login-banner">
+            <div class="banner-content">
                 <img src="assets/logo.png" alt="Latton Forum Logo" class="logo">
-                <div class="brand">
-                    <h1>LATTON FORUM</h1>
-                    <span class="subtitle">ESMT</span>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="menuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#" class="nav-link active">Accueil</a>
-                <a href="#features" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">À propos</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <div class="auth-buttons">
-                    <a href="auth.html" class="btn btn-login">Connexion</a>
-                    <a href="auth.html#register" class="btn btn-register">Inscription</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="hero-title">Bienvenue sur Latton Forum</h2>
-            <p class="hero-text">Votre plateforme d'excellence académique pour une collaboration enrichissante</p>
-            <div class="hero-buttons">
-                <a href="auth.html" class="btn btn-primary">Commencer maintenant</a>
-                <a href="#features" class="btn btn-secondary">En savoir plus</a>
+                <h1>LATTON FORUM</h1>
+                <p>Votre plateforme d'excellence académique</p>
             </div>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <h2 class="section-title">Nos Services</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Ressources Académiques</h3>
-                <p>Accédez à une bibliothèque complète de ressources pédagogiques de qualité.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Communauté Active</h3>
-                <p>Échangez avec d'autres étudiants et experts dans votre domaine.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Suivi Personnalisé</h3>
-                <p>Bénéficiez d'un accompagnement adapté à vos objectifs.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2 class="section-title">À Propos de Nous</h2>
-            <p class="about-text">Latton Forum est une plateforme innovante dédiée à l'excellence académique. Notre mission est de faciliter l'apprentissage collaboratif et de promouvoir le partage des connaissances.</p>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label">Étudiants</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Experts</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Ressources</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Contactez-nous</h2>
-        <div class="contact-container">
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" required>
-                </div>
+        <div class="login-form-container">
+            <h2>Connexion</h2>
+            <form id="loginForm" class="login-form">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" required>
+                    <span class="error-message"></span>
                 </div>
+
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" required></textarea>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" required>
+                    <span class="error-message"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Se souvenir de moi</span>
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Se connecter</button>
+
+                <div class="separator">
+                    <span>ou</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <img src="assets/google-icon.png" alt="Google">
+                        <span>Continuer avec Google</span>
+                    </button>
+                </div>
+
+                <p class="register-link">
+                    Pas encore de compte ? <a href="#">S'inscrire</a>
+                </p>
             </form>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Latton Forum</h3>
-                <p>Votre partenaire pour l'excellence académique</p>
-            </div>
-            <div class="footer-section">
-                <h3>Liens rapides</h3>
-                <a href="#features">Services</a>
-                <a href="#about">À propos</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Suivez-nous</h3>
-                <div class="social-links">
-                    <a href="#" class="social-link">Facebook</a>
-                    <a href="#" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">Instagram</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Latton Forum. Tous droits réservés.</p>
-        </div>
-    </footer>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
