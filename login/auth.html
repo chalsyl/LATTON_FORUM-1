@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latton Forum - Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-banner">
+            <div class="banner-content">
+                <img src="assets/logo.png" alt="Latton Forum Logo" class="logo">
+                <h1>LATTON FORUM</h1>
+                <p>Votre plateforme d'excellence académique</p>
+            </div>
+        </div>
+
+        <div class="login-form-container">
+            <h2>Connexion</h2>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Se souvenir de moi</span>
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Se connecter</button>
+
+                <div class="separator">
+                    <span>ou</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <img src="assets/google-icon.png" alt="Google">
+                        <span>Continuer avec Google</span>
+                    </button>
+                </div>
+
+                <p class="register-link">
+                    Pas encore de compte ? <a href="#">S'inscrire</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
