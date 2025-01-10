@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forum de discussion communautaire">
+    <title>Forum - Accueil</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components/header.css">
+    <link rel="stylesheet" href="/assets/css/components/footer.css">
+    <link rel="stylesheet" href="/assets/css/components/modal.css">
+    <link rel="stylesheet" href="/assets/css/pages/home.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.png" alt="Logo Forum">
+                </a>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher..." id="searchInput">
+                    <button type="button" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="nav-links">
+                    <a href="/forums" class="nav-link">Forums</a>
+                    <a href="/topics/recent" class="nav-link">Récents</a>
+                    <a href="/members" class="nav-link">Membres</a>
+                </div>
+
+                <!-- Menu utilisateur (visible si connecté) -->
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <button class="notifications-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count" id="notificationCount">0</span>
+                    </button>
+
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="/assets/images/default-avatar.png" alt="Avatar" id="userAvatar">
+                            <span id="username">Utilisateur</span>
+                        </button>
+                        <div class="dropdown-content" id="profileDropdown">
+                            <a href="/profile">Mon Profil</a>
+                            <a href="/settings">Paramètres</a>
+                            <button id="logoutBtn">Déconnexion</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutons de connexion (visible si déconnecté) -->
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn btn-login" id="loginBtn">Connexion</button>
+                    <button class="btn btn-register" id="registerBtn">Inscription</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <!-- Section héro -->
+        <section class="hero">
+            <h1>Bienvenue sur notre Forum</h1>
+            <p>Rejoignez notre communauté et participez aux discussions</p>
+        </section>
+
+        <!-- Forums populaires -->
+        <section class="popular-forums">
+            <h2>Forums Populaires</h2>
+            <div class="forums-grid" id="popularForums">
+                <!-- Les forums seront injectés ici via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Discussions récentes -->
+        <section class="recent-discussions">
+            <h2>Discussions Récentes</h2>
+            <div class="discussions-list" id="recentDiscussions">
+                <!-- Les discussions seront injectées ici via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Statistiques -->
+        <section class="statistics">
+            <h2>Statistiques</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Membres</h3>
+                    <p id="memberCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discussions</h3>
+                    <p id="topicCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-reply"></i>
+                    <h3>Réponses</h3>
+                    <p id="replyCount">0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Notre forum est un espace de discussion communautaire pour partager et échanger.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="/about">À propos</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/rules">Règles</a></li>
+                    <li><a href="/privacy">Confidentialité</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Nous suivre</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Forum. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <!-- Modale de connexion -->
+    <div class="modal" id="loginModal">
+        <!-- Le contenu sera injecté via JavaScript -->
+    </div>
+
+    <!-- Modale d'inscription -->
+    <div class="modal" id="registerModal">
+        <!-- Le contenu sera injecté via JavaScript -->
+    </div>
+
+    <!-- Modale de notifications -->
+    <div class="modal" id="notificationsModal">
+        <!-- Le contenu sera injecté via JavaScript -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils/helpers.js"></script>
+    <script src="/assets/js/utils/validation.js"></script>
+    <script src="/assets/js/utils/storage.js"></script>
+    <script src="/assets/js/services/api.js"></script>
+    <script src="/assets/js/services/auth.js"></script>
+    <script src="/assets/js/components/modal.js"></script>
+    <script src="/assets/js/components/forms.js"></script>
+    <script src="/assets/js/components/notifications.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
