@@ -7,25 +7,31 @@
     <title>Forum - Accueil</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/components/header.css">
-    <link rel="stylesheet" href="/assets/css/components/footer.css">
-    <link rel="stylesheet" href="/assets/css/components/modal.css">
-    <link rel="stylesheet" href="/assets/css/pages/home.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components/header.css">
+    <link rel="stylesheet" href="../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../assets/css/components/modal.css">
+    <link rel="stylesheet" href="../assets/css/pages/home.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
 </head>
 <body>
+    <div class="blob"></div>
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="navbar-brand">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo.png" alt="Logo Forum">
+                    <img src="../assets/images/logo.png" alt="Logo Forum" class="logo-animation">
                 </a>
             </div>
 
@@ -43,7 +49,7 @@
                     <a href="/members" class="nav-link">Membres</a>
                 </div>
 
-                <!-- Menu utilisateur (visible si connecté) -->
+                <!-- User menu (visible if logged in) -->
                 <div class="user-menu" id="userMenu" style="display: none;">
                     <button class="notifications-btn" id="notificationsBtn">
                         <i class="fas fa-bell"></i>
@@ -52,7 +58,7 @@
 
                     <div class="profile-dropdown">
                         <button class="profile-btn" id="profileBtn">
-                            <img src="/assets/images/default-avatar.png" alt="Avatar" id="userAvatar">
+                            <img src="../assets/images/default-avatar.png" alt="Avatar" id="userAvatar">
                             <span id="username">Utilisateur</span>
                         </button>
                         <div class="dropdown-content" id="profileDropdown">
@@ -63,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- Boutons de connexion (visible si déconnecté) -->
+                <!-- Auth buttons (visible if logged out) -->
                 <div class="auth-buttons" id="authButtons">
                     <button class="btn btn-login" id="loginBtn">Connexion</button>
                     <button class="btn btn-register" id="registerBtn">Inscription</button>
@@ -72,31 +78,38 @@
         </nav>
     </header>
 
-    <!-- Contenu principal -->
+    <!-- Main Content -->
     <main class="main-content">
-        <!-- Section héro -->
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Bienvenue sur notre Forum</h1>
-            <p>Rejoignez notre communauté et participez aux discussions</p>
+            <div class="hero-light-overlay"></div>
+            <div class="hero-content">
+                <h1>Bienvenue sur notre Forum</h1>
+                <p>Rejoignez notre communauté et participez aux discussions</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">Commencer</button>
+                    <button class="btn btn-secondary">En savoir plus</button>
+                </div>
+            </div>
         </section>
 
-        <!-- Forums populaires -->
+        <!-- Popular Forums -->
         <section class="popular-forums">
             <h2>Forums Populaires</h2>
             <div class="forums-grid" id="popularForums">
-                <!-- Les forums seront injectés ici via JavaScript -->
+                <!-- Forums will be injected here via JavaScript -->
             </div>
         </section>
 
-        <!-- Discussions récentes -->
+        <!-- Recent Discussions -->
         <section class="recent-discussions">
             <h2>Discussions Récentes</h2>
             <div class="discussions-list" id="recentDiscussions">
-                <!-- Les discussions seront injectées ici via JavaScript -->
+                <!-- Discussions will be injected here via JavaScript -->
             </div>
         </section>
 
-        <!-- Statistiques -->
+        <!-- Statistics -->
         <section class="statistics">
             <h2>Statistiques</h2>
             <div class="stats-grid">
@@ -117,10 +130,49 @@
                 </div>
             </div>
         </section>
+
+        <!-- À ajouter dans index.html, juste après la section des statistiques -->
+<section class="why-latton-forum">
+    <h2>Pourquoi utiliser Latton Forum ?</h2>
+    <div class="reasons-carousel" id="reasonsCarousel">
+        <div class="reason-card" data-position="left">
+            <div class="reason-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>Communauté Dynamique</h3>
+            <p>Connectez-vous avec des passionnés partageant vos intérêts</p>
+        </div>
+        <div class="reason-card" data-position="center">
+            <div class="reason-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h3>Discussions Riches</h3>
+            <p>Échangez des idées, apprenez et grandissez ensemble</p>
+        </div>
+        <div class="reason-card" data-position="right">
+            <div class="reason-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Espace Sécurisé</h3>
+            <p>Un environnement modéré et respectueux</p>
+        </div>
+        
+        <!-- Exemple d'ajout d'une quatrième raison -->
+        <div class="reason-card" data-position="hidden">
+            <div class="reason-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3>Portée Internationale</h3>
+            <p>Connectez-vous avec des utilisateurs du monde entier</p>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
     <footer class="footer">
+        <!-- Footer content remains the same as original -->
         <div class="footer-content">
             <div class="footer-section">
                 <h3>À propos</h3>
@@ -149,31 +201,22 @@
         </div>
     </footer>
 
-    <!-- Modales -->
-    <!-- Modale de connexion -->
-    <div class="modal" id="loginModal">
-        <!-- Le contenu sera injecté via JavaScript -->
-    </div>
-
-    <!-- Modale d'inscription -->
-    <div class="modal" id="registerModal">
-        <!-- Le contenu sera injecté via JavaScript -->
-    </div>
-
-    <!-- Modale de notifications -->
-    <div class="modal" id="notificationsModal">
-        <!-- Le contenu sera injecté via JavaScript -->
-    </div>
+    <!-- Modals -->
+    <div class="modal" id="loginModal"></div>
+    <div class="modal" id="registerModal"></div>
+    <div class="modal" id="notificationsModal"></div>
 
     <!-- Scripts -->
-    <script src="/assets/js/utils/helpers.js"></script>
-    <script src="/assets/js/utils/validation.js"></script>
-    <script src="/assets/js/utils/storage.js"></script>
-    <script src="/assets/js/services/api.js"></script>
-    <script src="/assets/js/services/auth.js"></script>
-    <script src="/assets/js/components/modal.js"></script>
-    <script src="/assets/js/components/forms.js"></script>
-    <script src="/assets/js/components/notifications.js"></script>
-    <script src="/assets/js/app.js"></script>
+    <script src="../assets/js/utils/helpers.js"></script>
+    <script src="../assets/js/utils/validation.js"></script>
+    <script src="../assets/js/utils/storage.js"></script>
+    <script src="../assets/js/services/api.js"></script>
+    <script src="../assets/js/services/auth.js"></script>
+    <script src="../assets/js/components/modal.js"></script>
+    <script src="../assets/js/components/forms.js"></script>
+    <script src="../assets/js/components/notifications.js"></script>
+    <script src="../assets/js/pages/home.js"></script>
+    <script src="../assets/js/app.js"></script>
+
 </body>
 </html>
