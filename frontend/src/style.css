@@ -1,0 +1,215 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: rgb(18, 36, 44);
+  --white: #fff;
+  --jaune : rgb(245, 222, 179);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+
+/* Styles pour les éléments de navigation */
+.navigation ul li:hover,
+.navigation ul li.active {
+  background-color: var(--jaune);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.active a {
+  color: var(--blue);
+}
+
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* Styles pour le logo */
+.logo {
+  width: 200px; /* Définir la largeur de l'image */
+  height: 90px; /* Définir la hauteur de l'image */
+}
+
+/* ====================== Responsive Design ========================== */
+
+/* Styles pour le menu déroulant */
+
+/* Styles pour le conteneur utilisateur */
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Ajouter un espace entre le menu déroulant et l'avatar */
+}
+
+/* Styles pour les icônes de notification et de message */
+.notification-icon, .message-icon {
+  font-size: 24px;
+  margin-right: 20px; /* Ajouter un espace entre les icônes et l'avatar */
+}
+
+/* Styles pour l'utilisateur */
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styles pour la disposition */
+.app {
+  display: flex;
+}
+
+/* Styles pour le contenu principal */
+.main-content {
+  margin-left: 300px; /* La largeur de la sidebar */
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles pour la position statique à droite */
+.static-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.custom-footer {
+  background-color: white;
+  border-top: 1px solid #e5e7eb;   /* équivalent de border-gray-200 */
+  padding: 0;            /* py-4 (1rem haut/bas), px-6 (1.5rem gauche/droite) */
+  text-align: center;
+  color: #6b7280;                  /* équivalent de text-gray-500 */
+  font-size: 0.875rem;             /* text-sm => 14px par défaut */
+}
+

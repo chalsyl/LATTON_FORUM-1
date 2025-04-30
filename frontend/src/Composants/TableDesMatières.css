@@ -1,0 +1,127 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background: rgb(245, 222, 179);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 80px;
+  }
+  
+  .subjects-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .subject-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .subject-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgb(18, 36, 44);
+    border-color: rgb(18, 36, 44);
+  }
+  
+  .card-content {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon-container {
+    background: rgb(245, 222, 179);
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+  }
+  
+  .subject-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #1f2937;
+  }
+  
+  .stats {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  
+  .stats p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .card-footer {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .card-footer button {
+    background: none;
+    border: none;
+    color: rgb(18, 36, 44);
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .card-footer button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .subjects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .subject-card {
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  
+  .icon-container {
+    transition: transform 0.2s;
+  }
+  
+  .subject-card:hover .icon-container {
+    transform: rotate(-5deg);
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    justify-content: center;
+    display: flex;
+  }
+
+.search-bar {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #ccc;
+    border-radius: 30px;
+    margin-top: 0;
+    margin-left: 130px;
+    margin-bottom: 20px;
+  }
