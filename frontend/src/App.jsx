@@ -1,50 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./Composants/Sidebar";
-import Avatar from "./Composants/Avatar";
-import TablesDesMatières from "./Composants/TableDesMatières";
-import Chat from "./Composants/Chat";
-import "./style.css";
-import avatarImage from "./assets/bamba.avif";
-
-function MainRoutes() {
-  const user = {
-    name: "Bamba",
-    avatarUrl: avatarImage,
-    role: "Étudiant",
-  };
-
-  return (
-    <>
-      <div className="user-container static-right">
-        <Avatar user={user} />
-      </div>
-
-      <Routes>
-        <Route path="/" element={<TablesDesMatières />} />
-        <Route path="/forum" element={<Chat />} />
-        <Route path="/compte" element={<h2>Mon Compte</h2>} />
-        <Route path="/mes-questions" element={<h2>Mes Questions</h2>} />
-        <Route path="/logout" element={<h2>Déconnexion</h2>} />
-      </Routes>
-
-      <footer className="custom-footer">
-        <p>© 2025 LATTON FORUM - Plateforme éducative</p>
-      </footer>
-    </>
-  );
-}
+import React from 'react'
+import './styles/App.css'
+import ThemeController from './components/themeController'
 
 function App() {
-  return (
-    <Router>
-      <div className="app">
-        <Sidebar />
-        <div className="main-content">
-          <MainRoutes />
+  return (<>
+    <div className="nav">
+      <ThemeController />
+    </div>
+    <div className="flex justify-center items-center min-h-[80vh]">
+      <form action="" className='fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4' method="post">
+        <div className='form card-body place-items-center'>
+          <h3 className="card-title">
+            Connexion
+          </h3>
+          <input type="text" name="username" placeholder="Nom d'utilisateur" />
+          <input type="password" name="password" placeholder='Mot de passe'/>
+          <input type="submit" className='btn btn-primary ' value="Se connecter"/>
         </div>
-      </div>
-    </Router>
-  );
+      </form>
+    </div>
+    </>
+  )
 }
 
-export default App;
+export default App
