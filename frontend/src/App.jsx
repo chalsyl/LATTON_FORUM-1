@@ -1,26 +1,35 @@
-import React from 'react'
-import './styles/App.css'
-import ThemeController from './components/themeController'
+import "./styles/App.css";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // <-- Ajoute ceci
+import { useState } from "react";
 
 function App() {
-  return (<>
-    <div className="nav">
-      <ThemeController />
-    </div>
-    <div className="flex justify-center items-center min-h-[80vh]">
-      <form action="" className='fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4' method="post">
-        <div className='form card-body place-items-center'>
-          <h3 className="card-title">
-            Connexion
-          </h3>
-          <input type="text" name="username" placeholder="Nom d'utilisateur" />
-          <input type="password" name="password" placeholder='Mot de passe'/>
-          <input type="submit" className='btn btn-primary ' value="Se connecter"/>
-        </div>
-      </form>
-    </div>
-    </>
-  )
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  return (
+    <Router>
+      <div>
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        <main>
+          <Routes>
+            <Route path="/" element={<div></div>} />
+            <Route path="/Forums" element={<div></div>} />
+            <Route path="/Utilisateurs" element={<div></div>} />
+            <Route path="/Matières" element={<div></div>} />
+            <Route path="/Ressources" element={<div></div>} />
+            <Route path="/Notifications" element={<div></div>} />
+            <Route path="/Groupes" element={<div></div>} />
+            <Route path="/Paramètres" element={<div></div>} />
+            <Route path="/Déconnexion" element={<div></div>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
