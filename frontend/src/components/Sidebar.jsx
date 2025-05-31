@@ -56,9 +56,9 @@ function Sidebar({ isOpen, toggleSidebar }) {
               </div>
             </div>
           ) : (
-            <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg mx-auto">
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg mx-auto">
               <img
-                src="/src/assets/LogoLattonForum.jpg"
+                src="/src/assets/favicon.png"
                 alt="Latton Forum Logo"
                 className="w-full h-full object-contain"
               />
